@@ -8,7 +8,7 @@ Install the following tools before running the application:
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 - [.NET 9 SDK](https://dotnet.microsoft.com/download/dotnet/9.0)
-- [Node.js 22.12 or newer](https://nodejs.org/) and npm
+- [Node.js 22.22 or newer](https://nodejs.org/) and npm
 
 ## Run locally
 
