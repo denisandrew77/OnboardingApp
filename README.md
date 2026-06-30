@@ -47,20 +47,34 @@ its password, use `POSTGRES_PASSWORD` from `.env`.
 
 ### 3. Start the backend
 
-In a new terminal, from the repository root, run:
+In a new terminal, from the repository root, restore the dependencies and local
+EF Core tool:
 
 ```bash
 dotnet restore OnboardingBackend/OnboardingBackend.csproj
+dotnet tool restore
+```
+
+Store the local PostgreSQL connection string using the same database credentials
+configured in `.env`:
+
+```bash
+dotnet user-secrets set \
+  "ConnectionStrings:DefaultConnection" \
+  "Host=localhost;Port=5432;Database=onboarding_db;Username=onboarding_user;Password=YOUR_POSTGRES_PASSWORD" \
+  --project OnboardingBackend
+```
+
+Apply the existing database migrations and start the backend:
+
+```bash
+dotnet ef database update --project OnboardingBackend
 dotnet run --project OnboardingBackend --launch-profile http
 ```
 
 The backend runs at [http://localhost:5213](http://localhost:5213). Its OpenAPI
 document is available at
 [http://localhost:5213/openapi/v1.json](http://localhost:5213/openapi/v1.json).
-
-> [!NOTE]
-> The Entity Framework Core PostgreSQL packages are installed, but the backend
-> does not yet register a `DbContext` or connect to PostgreSQL.
 
 ### 4. Start the frontend
 
