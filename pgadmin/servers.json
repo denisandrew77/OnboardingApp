@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Onboarding PostgreSQL",
+      "Group": "Servers",
+      "Host": "postgres",
+      "Port": 5432,
+      "MaintenanceDB": "onboarding_db",
+      "Username": "onboarding_user",
+      "SSLMode": "prefer"
+    }
+  }
+}

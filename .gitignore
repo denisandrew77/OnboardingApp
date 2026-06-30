@@ -1,0 +1,14 @@
+# Local configuration and secrets
+.env
+.vscode/
+
+# .NET build output
+**/bin/
+**/obj/
+
+# Frontend dependencies and output
+**/node_modules/
+**/dist/
+
+# Local editor and OS files
+.DS_Store
