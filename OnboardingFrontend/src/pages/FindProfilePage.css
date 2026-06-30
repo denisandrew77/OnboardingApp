@@ -1,0 +1,141 @@
+.form-panel {
+  width: min(100%, 680px);
+  padding: clamp(28px, 5vw, 52px);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.profile-form {
+  display: grid;
+  gap: 24px;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 9px;
+}
+
+.field span {
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 680;
+}
+
+.field input {
+  width: 100%;
+  height: 52px;
+  padding: 0 15px;
+  border: 1px solid var(--line-strong);
+  border-radius: 5px;
+  color: var(--ink);
+  background: #fff;
+  transition: border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.field input::placeholder {
+  color: #9aa19c;
+}
+
+.field input:focus {
+  border-color: var(--forest);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(63, 98, 80, 0.08);
+}
+
+.search-feedback {
+  margin-top: 28px;
+}
+
+.notice {
+  padding: 16px 18px;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  color: var(--ink-soft);
+  background: var(--surface-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.notice strong {
+  display: block;
+  margin-bottom: 3px;
+  color: var(--ink);
+}
+
+.notice p {
+  margin: 0;
+}
+
+.notice--error {
+  color: var(--error);
+  border-color: rgba(140, 64, 57, 0.25);
+  background: #f8eeeb;
+}
+
+.results-label {
+  margin-bottom: 12px;
+}
+
+.results-list {
+  display: grid;
+  gap: 10px;
+}
+
+.profile-result {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  color: inherit;
+  background: #fff;
+  text-decoration: none;
+  transition: border-color 180ms ease, transform 180ms ease, box-shadow 180ms ease;
+}
+
+.profile-result:hover {
+  border-color: var(--line-strong);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(40, 52, 45, 0.08);
+}
+
+.profile-result__details {
+  display: grid;
+  gap: 4px;
+}
+
+.profile-result__details strong {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+}
+
+.profile-result__details span {
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.profile-result__arrow {
+  padding-right: 5px;
+  color: var(--forest);
+}
+
+@media (max-width: 560px) {
+  .form-panel {
+    padding: 24px;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+}
