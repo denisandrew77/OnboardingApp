@@ -6,9 +6,16 @@ import './AppShell.css'
 interface AppShellProps {
   children: ReactNode
   currentStep: number
+  progressLabel?: string
+  totalSteps?: number
 }
 
-export function AppShell({ children, currentStep }: AppShellProps) {
+export function AppShell({
+  children,
+  currentStep,
+  progressLabel = profileSetupContent.shell.progressName,
+  totalSteps = 3,
+}: AppShellProps) {
   const { shell } = profileSetupContent
 
   return (
@@ -19,17 +26,20 @@ export function AppShell({ children, currentStep }: AppShellProps) {
           <span>{shell.brandName}</span>
         </Link>
 
-        <div className="setup-progress" aria-label={shell.progressAriaLabel(currentStep)}>
-          <span>{shell.progressName}</span>
+        <div
+          className="setup-progress"
+          aria-label={`${progressLabel} step ${currentStep} of ${totalSteps}`}
+        >
+          <span>{progressLabel}</span>
           <div className="progress-dots" aria-hidden="true">
-            {[1, 2, 3].map((step) => (
+            {Array.from({ length: totalSteps }, (_, index) => index + 1).map((step) => (
               <span
                 className={step <= currentStep ? 'progress-dot progress-dot--active' : 'progress-dot'}
                 key={step}
               />
             ))}
           </div>
-          <span>{currentStep} / 3</span>
+          <span>{currentStep} / {totalSteps}</span>
         </div>
       </header>
 
