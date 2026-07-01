@@ -1,11 +1,11 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useMemo, useRef, useState } from 'react'
 import { Link, Navigate } from 'react-router'
-import { getSupportContacts } from '../api/employeesApi'
 import { AppShell } from '../components/AppShell'
+import { TechStackGrid } from '../components/TechStackGrid'
 import { resourceHubContent, type HubResource, type ResourceIcon } from '../content/resourceHub'
 import { onboardingContent } from '../content/onboarding'
 import { getSelectedEmployeeId, useSelectedEmployee } from '../hooks/useSelectedEmployee'
-import type { SupportContact } from '../models/employee'
+import { useSupportContacts } from '../hooks/useSupportContacts'
 import './EmployeeHubPage.css'
 
 const iconPaths: Record<ResourceIcon, string> = {
@@ -66,18 +66,8 @@ export function EmployeeHubPage() {
   const employeeId = getSelectedEmployeeId()
   const { employee } = useSelectedEmployee()
   const [query, setQuery] = useState('')
-  const [contacts, setContacts] = useState<SupportContact[]>([])
-  const [contactsLoading, setContactsLoading] = useState(true)
+  const { contacts, isLoading: contactsLoading } = useSupportContacts()
   const techStackDialog = useRef<HTMLDialogElement>(null)
-
-  useEffect(() => {
-    const controller = new AbortController()
-    getSupportContacts(controller.signal)
-      .then(setContacts)
-      .catch(() => setContacts([]))
-      .finally(() => setContactsLoading(false))
-    return () => controller.abort()
-  }, [])
 
   const resources = useMemo<HubResource[]>(() => {
     const contactResources = contacts.map((contact): HubResource => ({
@@ -165,15 +155,7 @@ export function EmployeeHubPage() {
             </div>
             <button aria-label="Close tech stack" onClick={() => techStackDialog.current?.close()} type="button">×</button>
           </div>
-          <div className="tech-stack-dialog__grid">
-            {onboardingContent.role.stack.map((item) => (
-              <article key={item.layer}>
-                <small>{item.layer}</small>
-                <h3>{item.tools}</h3>
-                <p>{item.description}</p>
-              </article>
-            ))}
-          </div>
+          <TechStackGrid items={onboardingContent.role.stack} variant="dialog" />
         </dialog>
       </main>
     </AppShell>

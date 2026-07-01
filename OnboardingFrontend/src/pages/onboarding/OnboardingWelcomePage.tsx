@@ -1,4 +1,6 @@
+import { EmployeeAvatar } from '../../components/EmployeeAvatar'
 import { OnboardingLayout } from '../../components/OnboardingLayout'
+import { OnboardingStepHeader } from '../../components/OnboardingStepHeader'
 import { onboardingContent } from '../../content/onboarding'
 import { useSelectedEmployee } from '../../hooks/useSelectedEmployee'
 import './OnboardingWelcomePage.css'
@@ -10,17 +12,19 @@ export function OnboardingWelcomePage() {
   return (
     <OnboardingLayout step="welcome">
       <section className="onboarding-welcome">
-        <div className="step-header">
-          <p className="eyebrow">{welcome.eyebrow}</p>
-          <h1>{welcome.title()}</h1>
-          <p className="step-description">{welcome.description}</p>
-        </div>
+        <OnboardingStepHeader
+          description={welcome.description}
+          eyebrow={welcome.eyebrow}
+          title={welcome.title()}
+        />
 
         {employee && (
           <div className="welcome-profile content-card result-enter">
-            <span className="avatar avatar--welcome" aria-hidden="true">
-              {employee.firstName[0]}{employee.lastName[0]}
-            </span>
+            <EmployeeAvatar
+              className="avatar avatar--welcome"
+              firstName={employee.firstName}
+              lastName={employee.lastName}
+            />
             <div>
               <span>Your Meridian profile</span>
               <strong>{employee.firstName} {employee.lastName}</strong>

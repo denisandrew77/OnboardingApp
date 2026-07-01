@@ -1,15 +1,14 @@
-import { useEffect, useState } from 'react'
-import { getSupportContacts } from '../../api/employeesApi'
+import { EmployeeAvatar } from '../../components/EmployeeAvatar'
 import { OnboardingLayout } from '../../components/OnboardingLayout'
+import { OnboardingStepHeader } from '../../components/OnboardingStepHeader'
 import { onboardingContent } from '../../content/onboarding'
+import { useSupportContacts } from '../../hooks/useSupportContacts'
 import type { SupportContact } from '../../models/employee'
 import './ResourcesPage.css'
 
 export function ResourcesPage() {
   const { resources } = onboardingContent
-  const [contacts, setContacts] = useState<SupportContact[]>([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [hasError, setHasError] = useState(false)
+  const { contacts, hasError, isLoading } = useSupportContacts()
 
   const displayedContacts: SupportContact[] = contacts.some(
     (contact) => contact.contactType === 'system-administrator',
@@ -25,29 +24,14 @@ export function ResourcesPage() {
     },
   ]
 
-  useEffect(() => {
-    const controller = new AbortController()
-
-    getSupportContacts(controller.signal)
-      .then(setContacts)
-      .catch((error: unknown) => {
-        if (!(error instanceof DOMException && error.name === 'AbortError')) {
-          setHasError(true)
-        }
-      })
-      .finally(() => setIsLoading(false))
-
-    return () => controller.abort()
-  }, [])
-
   return (
     <OnboardingLayout step="resources">
       <section>
-        <div className="step-header">
-          <p className="eyebrow">{resources.eyebrow}</p>
-          <h1>{resources.title}</h1>
-          <p className="step-description">{resources.description}</p>
-        </div>
+        <OnboardingStepHeader
+          description={resources.description}
+          eyebrow={resources.eyebrow}
+          title={resources.title}
+        />
 
         {isLoading ? (
           <p className="resources-state">{resources.loading}</p>
@@ -57,9 +41,11 @@ export function ResourcesPage() {
           <div className="contact-grid">
             {displayedContacts.map((contact) => (
               <article className="contact-card content-card" key={contact.id}>
-                <span className="contact-avatar" aria-hidden="true">
-                  {contact.firstName[0]}{contact.lastName[0]}
-                </span>
+                <EmployeeAvatar
+                  className="contact-avatar"
+                  firstName={contact.firstName}
+                  lastName={contact.lastName}
+                />
                 <div>
                   <p className="contact-type">
                     {contact.contactType === 'hr' ? 'Human Resources' : 'Technical support'}
