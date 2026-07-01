@@ -85,9 +85,12 @@
 }
 
 .completion-success .completion-hub-link {
-  display: block;
-  margin-bottom: 10px;
+  display: flex;
+  width: fit-content;
+  margin: 0 auto 14px;
+  color: #fff;
   font-size: 14px;
+  text-decoration: none;
 }
 
 @media (max-width: 600px) {

@@ -38,7 +38,10 @@ export function CompletePage() {
           <div className="completion-success result-enter" aria-live="polite">
             <strong>{complete.completedLabel}</strong>
             <p>{complete.completedMessage}</p>
-            <Link className="completion-hub-link" to="/employee-hub">Open employee resource hub</Link>
+            <Link className="button button--primary completion-hub-link" to="/employee-hub">
+              Open employee resource hub
+              <span aria-hidden="true">→</span>
+            </Link>
             <Link to="/onboarding/welcome">{complete.restartAction}</Link>
           </div>
         ) : (
