@@ -29,3 +29,12 @@ export interface ManagerSummary {
   email: string
   jobTitle: string
 }
+
+export interface SupportContact {
+  id: number
+  firstName: string
+  lastName: string
+  email: string
+  jobTitle: string
+  contactType: 'hr' | 'system-administrator'
+}
