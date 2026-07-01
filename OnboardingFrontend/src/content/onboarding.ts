@@ -7,6 +7,7 @@ export const onboardingStepOrder = [
   'schedule',
   'tools',
   'resources',
+  'amenities',
   'complete',
 ] as const
 
@@ -21,6 +22,7 @@ export const onboardingRoutes: Record<OnboardingStepKey, string> = {
   schedule: '/onboarding/schedule',
   tools: '/onboarding/tools',
   resources: '/onboarding/resources',
+  amenities: '/onboarding/amenities',
   complete: '/onboarding/complete',
 }
 
@@ -40,7 +42,7 @@ export const onboardingContent = {
       { label: 'Company', value: 'Meridian' },
       { label: 'People', value: '200 colleagues' },
       { label: 'Work style', value: 'Hybrid' },
-      { label: 'Your guide', value: '9 short chapters' },
+      { label: 'Your guide', value: '10 short chapters' },
     ],
     note: 'You can move back at any time and revisit this guide after completing it.',
   },
@@ -183,23 +185,44 @@ export const onboardingContent = {
       'Not every message is urgent. Use status, calendar blocks, and thoughtful notifications so deep work remains possible.',
   },
   resources: {
-    eyebrow: 'Where to get help',
-    title: 'You are not expected to remember everything.',
+    eyebrow: 'Your support contacts',
+    title: 'Know who to ask when you need help.',
     description:
-      'Use this guide as a map. When the answer is not here, the right person or source should be easy to find.',
-    groups: [
-      { title: 'People', items: [
-        { name: 'Your manager', description: 'Priorities, role expectations, feedback, and team decisions.' },
-        { name: 'HR', description: 'Contracts, benefits, leave, workplace policies, and personal administration.' },
-        { name: 'Technical contact', description: 'Accounts, permissions, device setup, and development access.' },
-      ] },
-      { title: 'Knowledge', items: [
-        { name: 'Company handbook', description: 'Policies, benefits, office details, and ways of working.' },
-        { name: 'Engineering documentation', description: 'System architecture, repository setup, standards, and runbooks.' },
-        { name: 'Product documentation', description: 'Customer problems, product areas, roadmap context, and terminology.' },
-      ] },
-    ],
+      'These are your main contacts for employment questions and technical support. You can email them directly whenever you need guidance.',
+    contactDescriptions: {
+      hr: 'Contact HR about your contract, salary and bonuses, benefits, leave, company policies, or personal administration.',
+      'system-administrator': 'Contact the system administrator for your laptop, accounts, permissions, software, security, or other technical issues.',
+    },
+    loading: 'Loading your support contacts…',
+    unavailable: 'Support contact details are temporarily unavailable. Ask your manager to connect you with the right person.',
     reminder: 'When asking for help, include the goal, what you tried, what happened, and where you are blocked.',
+  },
+  amenities: {
+    eyebrow: 'Office and benefits',
+    title: 'A few things that make work easier.',
+    description:
+      'Meridian provides practical office amenities and employee benefits to support your work, wellbeing, and development.',
+    sections: [
+      {
+        title: 'Around the office',
+        items: [
+          { name: 'Coffee and refreshments', description: 'A coffee machine, tea, filtered water, and light refreshments are available in the shared kitchen.' },
+          { name: 'Shared kitchen', description: 'Use the refrigerator, microwave, dishes, and dining area for meals and breaks. Please label your food and leave the space tidy.' },
+          { name: 'Workplace essentials', description: 'Meeting rooms, quiet spaces, printing, office supplies, and basic device accessories are available when you need them.' },
+          { name: 'Personal storage', description: 'Lockers and coat storage are available for items you do not want to keep at your desk.' },
+        ],
+      },
+      {
+        title: 'Benefits and support',
+        items: [
+          { name: 'Salary bonuses', description: 'Eligible employees may receive performance-based salary bonuses. HR will explain the criteria, timing, and terms that apply to your role.' },
+          { name: 'Learning support', description: 'Discuss relevant courses, books, certifications, and professional events with your manager before purchasing.' },
+          { name: 'Health and wellbeing', description: 'Your benefits package includes health and wellbeing support; HR can guide you through coverage and enrollment.' },
+          { name: 'Time away from work', description: 'Annual leave, public holidays, and other types of leave are explained in your contract and the company policy.' },
+        ],
+      },
+    ],
+    note: 'If you are unsure whether something is available or covered, ask HR before making a purchase or commitment.',
   },
   complete: {
     eyebrow: 'You are ready to begin',
@@ -210,7 +233,7 @@ export const onboardingContent = {
       'You know your manager and immediate team.',
       'You understand your first day and hybrid schedule.',
       'You know the development approach and communication tools.',
-      'You know where to find help when something is unclear.',
+      'You know where to find help and which amenities and benefits are available.',
     ],
     finishAction: 'Complete onboarding',
     completedLabel: 'Onboarding complete',
