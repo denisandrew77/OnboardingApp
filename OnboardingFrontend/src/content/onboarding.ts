@@ -205,8 +205,8 @@ export const onboardingContent = {
       {
         title: 'Around the office',
         items: [
+          { name: 'Shared kitchen', description: 'The shared kitchen is on Floor 3 beside the dining area. Use the refrigerator, microwave, dishes, and dining area for meals and breaks. Please label your food and leave the space tidy.' },
           { name: 'Coffee and refreshments', description: 'A coffee machine, tea, filtered water, and light refreshments are available in the shared kitchen.' },
-          { name: 'Shared kitchen', description: 'Use the refrigerator, microwave, dishes, and dining area for meals and breaks. Please label your food and leave the space tidy.' },
           { name: 'Workplace essentials', description: 'Meeting rooms, quiet spaces, printing, office supplies, and basic device accessories are available when you need them.' },
           { name: 'Personal storage', description: 'Lockers and coat storage are available for items you do not want to keep at your desk.' },
         ],
@@ -215,9 +215,9 @@ export const onboardingContent = {
         title: 'Benefits and support',
         items: [
           { name: 'Salary bonuses', description: 'Eligible employees may receive performance-based salary bonuses. HR will explain the criteria, timing, and terms that apply to your role.' },
-          { name: 'Learning support', description: 'Discuss relevant courses, books, certifications, and professional events with your manager before purchasing.' },
-          { name: 'Health and wellbeing', description: 'Your benefits package includes health and wellbeing support; HR can guide you through coverage and enrollment.' },
-          { name: 'Time away from work', description: 'Annual leave, public holidays, and other types of leave are explained in your contract and the company policy.' },
+          { name: 'Learning support', description: 'Meridian provides $100 in certification credits each year by default. Discuss relevant certifications and any additional learning support with your manager before purchasing.' },
+          { name: 'Health and wellbeing', description: 'The office gym is on the ground floor near the lockers and changing rooms, and is available as part of Meridian’s wellbeing support.' },
+          { name: 'Time away from work', description: 'Meridian provides 22 paid holiday days per year by default. This allowance may increase in the future according to company policy and your employment terms.' },
         ],
       },
     ],

@@ -129,6 +129,9 @@ export const resourceHubContent = {
       summary: 'Where to learn about compensation, eligibility, health support, and leave.',
       details: [
         'Eligible employees may receive performance-based salary bonuses. HR can explain the criteria, timing, and terms for your role.',
+        'The shared kitchen is on Floor 3 beside the dining area.',
+        'The office gym is on the ground floor near the lockers and changing rooms.',
+        'Meridian provides 22 paid holiday days per year by default. This allowance may increase according to company policy and your employment terms.',
       ],
       keywords: ['salary', 'money', 'health', 'leave', 'holiday', 'vacation'],
     },
