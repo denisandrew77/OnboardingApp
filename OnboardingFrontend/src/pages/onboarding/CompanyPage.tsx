@@ -17,7 +17,18 @@ export function CompanyPage() {
         <dl className="company-stats">
           {company.stats.map((stat) => (
             <div key={stat.label}>
-              <dd>{stat.value}</dd>
+              {'breakdown' in stat ? (
+                <dd className="work-week-breakdown">
+                  {stat.breakdown.map((item) => (
+                    <span key={item.label}>
+                      <strong>{item.value}</strong>
+                      <small>{item.label}</small>
+                    </span>
+                  ))}
+                </dd>
+              ) : (
+                <dd>{stat.value}</dd>
+              )}
               <dt>{stat.label}</dt>
             </div>
           ))}

@@ -48,12 +48,19 @@ export const onboardingContent = {
     eyebrow: 'Meet Meridian',
     title: 'A company built around useful work and good people.',
     description:
-      'Meridian is a 200-person company where product, engineering, commercial, and operational teams work closely together. We value clarity, ownership, and thoughtful collaboration.',
+      'Meridian is a software development company creating products that make everyday work and learning more effective, including an AI scheduling app, an interactive AI-powered learning app, and more. We value clarity, ownership, and thoughtful collaboration.',
     stats: [
       { value: '200', label: 'employees' },
       { value: '5', label: 'departments' },
       { value: '2–3', label: 'new colleagues each month' },
-      { value: '3 + 2', label: 'office and remote days' },
+      {
+        value: 'Hybrid',
+        label: 'work week',
+        breakdown: [
+          { value: '3', label: 'office days' },
+          { value: '2', label: 'remote days' },
+        ],
+      },
     ],
     departments: [
       { name: 'Engineering', description: 'Builds and maintains Meridian products and systems.' },
@@ -64,7 +71,7 @@ export const onboardingContent = {
     ],
     principleTitle: 'How we work together',
     principles: [
-      'Give context, not just instructions.',
+      'Ask yourself what the customer needs before what is easiest to build.',
       'Ask early when something is unclear.',
       'Treat feedback as a tool for better work.',
       'Make decisions with the customer and product in mind.',

@@ -32,6 +32,32 @@
   text-transform: uppercase;
 }
 
+.company-stats .work-week-breakdown {
+  display: flex;
+  gap: 18px;
+  margin-bottom: 6px;
+}
+
+.work-week-breakdown span {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 5px;
+}
+
+.work-week-breakdown strong {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.work-week-breakdown small {
+  color: var(--ink-soft);
+  font-family: var(--sans);
+  font-size: 10px;
+  line-height: 1.15;
+  text-transform: uppercase;
+}
+
 .company-section {
   margin-bottom: 62px;
 }
@@ -116,5 +142,14 @@
   .department-grid,
   .company-principles ul {
     grid-template-columns: 1fr;
+  }
+
+  .company-stats .work-week-breakdown {
+    gap: 12px;
+  }
+
+  .work-week-breakdown span {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 }
