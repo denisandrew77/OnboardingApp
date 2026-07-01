@@ -1,0 +1,49 @@
+.amenities-sections {
+  display: grid;
+  gap: 48px;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.amenity-card {
+  padding: 24px;
+}
+
+.amenity-card h3 {
+  margin: 0 0 9px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px;
+}
+
+.amenity-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.amenities-note {
+  max-width: 820px;
+  margin-top: 42px;
+  padding: 22px 26px;
+  border-left: 3px solid var(--forest);
+  background: var(--forest-pale);
+}
+
+.amenities-note p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .amenities-grid {
+    grid-template-columns: 1fr;
+  }
+}
