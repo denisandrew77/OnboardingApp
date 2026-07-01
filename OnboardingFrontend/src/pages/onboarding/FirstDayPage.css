@@ -1,0 +1,97 @@
+.first-day-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: clamp(40px, 8vw, 100px);
+  align-items: start;
+}
+
+.day-timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.day-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: 22px;
+  padding: 0 0 30px;
+}
+
+.day-timeline li:not(:last-child)::before {
+  position: absolute;
+  top: 24px;
+  bottom: 5px;
+  left: 5px;
+  width: 1px;
+  background: var(--line-strong);
+  content: '';
+}
+
+.day-timeline time {
+  position: relative;
+  padding-left: 19px;
+  color: var(--forest);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.day-timeline time::before {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 11px;
+  height: 11px;
+  border: 3px solid var(--paper);
+  border-radius: 50%;
+  background: var(--forest);
+  box-shadow: 0 0 0 1px var(--forest);
+  content: '';
+}
+
+.day-timeline h3 {
+  margin: -5px 0 6px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px;
+}
+
+.day-timeline p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.bring-card {
+  position: sticky;
+  top: 24px;
+  padding: 27px;
+}
+
+.bring-card ul {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.bring-card li {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .first-day-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .bring-card {
+    position: static;
+  }
+}
