@@ -1,4 +1,5 @@
 import { OnboardingLayout } from '../../components/OnboardingLayout'
+import { OnboardingStepHeader } from '../../components/OnboardingStepHeader'
 import { onboardingContent } from '../../content/onboarding'
 import './SchedulePage.css'
 
@@ -8,11 +9,11 @@ export function SchedulePage() {
   return (
     <OnboardingLayout step="schedule">
       <section>
-        <div className="step-header">
-          <p className="eyebrow">{schedule.eyebrow}</p>
-          <h1>{schedule.title}</h1>
-          <p className="step-description">{schedule.description}</p>
-        </div>
+        <OnboardingStepHeader
+          description={schedule.description}
+          eyebrow={schedule.eyebrow}
+          title={schedule.title}
+        />
 
         <div className="schedule-grid">
           {schedule.cards.map((card, index) => (

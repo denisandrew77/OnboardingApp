@@ -1,4 +1,5 @@
 import { OnboardingLayout } from '../../components/OnboardingLayout'
+import { OnboardingStepHeader } from '../../components/OnboardingStepHeader'
 import { onboardingContent } from '../../content/onboarding'
 import './ToolsPage.css'
 
@@ -8,11 +9,11 @@ export function ToolsPage() {
   return (
     <OnboardingLayout step="tools">
       <section>
-        <div className="step-header">
-          <p className="eyebrow">{tools.eyebrow}</p>
-          <h1>{tools.title}</h1>
-          <p className="step-description">{tools.description}</p>
-        </div>
+        <OnboardingStepHeader
+          description={tools.description}
+          eyebrow={tools.eyebrow}
+          title={tools.title}
+        />
 
         <div className="tools-grid">
           {tools.tools.map((tool) => (

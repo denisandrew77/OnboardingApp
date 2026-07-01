@@ -1,4 +1,6 @@
 import { OnboardingLayout } from '../../components/OnboardingLayout'
+import { OnboardingStepHeader } from '../../components/OnboardingStepHeader'
+import { TechStackGrid } from '../../components/TechStackGrid'
 import { onboardingContent } from '../../content/onboarding'
 import { useSelectedEmployee } from '../../hooks/useSelectedEmployee'
 import './RolePage.css'
@@ -10,11 +12,11 @@ export function RolePage() {
   return (
     <OnboardingLayout step="role">
       <section>
-        <div className="step-header">
-          <p className="eyebrow">{role.eyebrow}</p>
-          <h1>{role.title}</h1>
-          <p className="step-description">{role.description}</p>
-        </div>
+        <OnboardingStepHeader
+          description={role.description}
+          eyebrow={role.eyebrow}
+          title={role.title}
+        />
 
         {isLoading && <p className="role-loading">{role.loading}</p>}
         {employee && (
@@ -32,15 +34,7 @@ export function RolePage() {
 
         <section className="role-section">
           <h2 className="section-title">{role.stackTitle}</h2>
-          <div className="stack-grid">
-            {role.stack.map((item) => (
-              <article className="stack-card content-card" key={item.layer}>
-                <span>{item.layer}</span>
-                <h3>{item.tools}</h3>
-                <p>{item.description}</p>
-              </article>
-            ))}
-          </div>
+          <TechStackGrid items={role.stack} />
         </section>
 
         <section className="role-section">
