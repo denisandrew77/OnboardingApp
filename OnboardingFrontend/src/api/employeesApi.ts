@@ -1,4 +1,4 @@
-import type { EmployeeDetails, EmployeeSearchResult } from '../models/employee'
+import type { EmployeeDetails, EmployeeSearchResult, SupportContact } from '../models/employee'
 import type { TeamDetails } from '../models/team'
 import { apiGet } from './apiClient'
 
@@ -14,6 +14,10 @@ export function searchEmployees(
 
 export function getEmployee(employeeId: number, signal?: AbortSignal) {
   return apiGet<EmployeeDetails>(`/api/employees/${employeeId}`, signal)
+}
+
+export function getSupportContacts(signal?: AbortSignal) {
+  return apiGet<SupportContact[]>('/api/employees/support-contacts', signal)
 }
 
 export function getEmployeeTeam(employeeId: number, signal?: AbortSignal) {
