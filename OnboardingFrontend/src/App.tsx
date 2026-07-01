@@ -2,6 +2,7 @@ import { Navigate, Route, Routes } from 'react-router'
 import { ConfirmProfilePage } from './pages/ConfirmProfilePage'
 import { FindProfilePage } from './pages/FindProfilePage'
 import { WelcomePage } from './pages/WelcomePage'
+import { EmployeeHubPage } from './pages/EmployeeHubPage'
 import { AmenitiesPage } from './pages/onboarding/AmenitiesPage'
 import { CompanyPage } from './pages/onboarding/CompanyPage'
 import { CompletePage } from './pages/onboarding/CompletePage'
@@ -19,6 +20,7 @@ function App() {
       <Route path="/" element={<WelcomePage />} />
       <Route path="/find-profile" element={<FindProfilePage />} />
       <Route path="/confirm-profile/:employeeId" element={<ConfirmProfilePage />} />
+      <Route path="/employee-hub" element={<EmployeeHubPage />} />
       <Route path="/onboarding/welcome" element={<OnboardingWelcomePage />} />
       <Route path="/onboarding/company" element={<CompanyPage />} />
       <Route path="/onboarding/first-day" element={<FirstDayPage />} />

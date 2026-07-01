@@ -8,6 +8,7 @@ interface AppShellProps {
   currentStep: number
   progressLabel?: string
   totalSteps?: number
+  showProgress?: boolean
 }
 
 export function AppShell({
@@ -15,6 +16,7 @@ export function AppShell({
   currentStep,
   progressLabel = profileSetupContent.shell.progressName,
   totalSteps = 3,
+  showProgress = true,
 }: AppShellProps) {
   const { shell } = profileSetupContent
 
@@ -26,21 +28,23 @@ export function AppShell({
           <span>{shell.brandName}</span>
         </Link>
 
-        <div
-          className="setup-progress"
-          aria-label={`${progressLabel} step ${currentStep} of ${totalSteps}`}
-        >
-          <span>{progressLabel}</span>
-          <div className="progress-dots" aria-hidden="true">
-            {Array.from({ length: totalSteps }, (_, index) => index + 1).map((step) => (
-              <span
-                className={step <= currentStep ? 'progress-dot progress-dot--active' : 'progress-dot'}
-                key={step}
-              />
-            ))}
+        {showProgress && (
+          <div
+            className="setup-progress"
+            aria-label={`${progressLabel} step ${currentStep} of ${totalSteps}`}
+          >
+            <span>{progressLabel}</span>
+            <div className="progress-dots" aria-hidden="true">
+              {Array.from({ length: totalSteps }, (_, index) => index + 1).map((step) => (
+                <span
+                  className={step <= currentStep ? 'progress-dot progress-dot--active' : 'progress-dot'}
+                  key={step}
+                />
+              ))}
+            </div>
+            <span>{currentStep} / {totalSteps}</span>
           </div>
-          <span>{currentStep} / {totalSteps}</span>
-        </div>
+        )}
       </header>
 
       <div className="page-frame">{children}</div>
