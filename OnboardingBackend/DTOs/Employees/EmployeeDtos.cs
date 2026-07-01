@@ -28,3 +28,11 @@ public sealed record ManagerSummaryDto(
     string LastName,
     string Email,
     string JobTitle);
+
+public sealed record SupportContactDto(
+    int Id,
+    string FirstName,
+    string LastName,
+    string Email,
+    string JobTitle,
+    string ContactType);

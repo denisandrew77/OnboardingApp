@@ -61,6 +61,14 @@ public sealed class EmployeesController : ControllerBase
         return employee is null ? NotFound() : Ok(employee);
     }
 
+    [HttpGet("support-contacts")]
+    [ProducesResponseType<IReadOnlyList<SupportContactDto>>(StatusCodes.Status200OK)]
+    public async Task<ActionResult<IReadOnlyList<SupportContactDto>>> GetSupportContacts(
+        CancellationToken cancellationToken)
+    {
+        return Ok(await _employeeService.GetSupportContactsAsync(cancellationToken));
+    }
+
     [HttpGet("{employeeId:int}/team")]
     [ProducesResponseType<TeamDetailsDto>(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

@@ -68,6 +68,41 @@ public sealed class EmployeeService
             .SingleOrDefaultAsync(cancellationToken);
     }
 
+    public async Task<IReadOnlyList<SupportContactDto>> GetSupportContactsAsync(
+        CancellationToken cancellationToken)
+    {
+        var hrContact = await _dbContext.Employees
+            .AsNoTracking()
+            .Where(employee => employee.Team.Department.Name.ToLower() == "hr")
+            .OrderBy(employee => employee.Id)
+            .Select(employee => new SupportContactDto(
+                employee.Id,
+                employee.FirstName,
+                employee.LastName,
+                employee.Email,
+                employee.JobTitle,
+                "hr"))
+            .FirstOrDefaultAsync(cancellationToken);
+
+        var systemAdministrator = await _dbContext.Employees
+            .AsNoTracking()
+            .Where(employee => employee.JobTitle.ToLower().Contains("administrator"))
+            .OrderBy(employee => employee.Id)
+            .Select(employee => new SupportContactDto(
+                employee.Id,
+                employee.FirstName,
+                employee.LastName,
+                employee.Email,
+                employee.JobTitle,
+                "system-administrator"))
+            .FirstOrDefaultAsync(cancellationToken);
+
+        return new[] { hrContact, systemAdministrator }
+            .Where(contact => contact is not null)
+            .Cast<SupportContactDto>()
+            .ToArray();
+    }
+
     public Task<TeamDetailsDto?> GetTeamByEmployeeIdAsync(
         int employeeId,
         CancellationToken cancellationToken)
