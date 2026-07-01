@@ -12,7 +12,7 @@ export function OnboardingWelcomePage() {
       <section className="onboarding-welcome">
         <div className="step-header">
           <p className="eyebrow">{welcome.eyebrow}</p>
-          <h1>{welcome.title(employee?.firstName)}</h1>
+          <h1>{welcome.title()}</h1>
           <p className="step-description">{welcome.description}</p>
         </div>
 

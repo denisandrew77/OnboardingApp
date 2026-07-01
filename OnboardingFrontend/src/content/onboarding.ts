@@ -34,10 +34,9 @@ export const onboardingContent = {
   },
   welcome: {
     eyebrow: 'Welcome to Meridian',
-    title: (firstName?: string) =>
-      firstName ? `It is good to have you here, ${firstName}.` : 'It is good to have you here.',
+    title: () => 'Your guide to getting started at Meridian.',
     description:
-      'Starting somewhere new should feel exciting, not confusing. This short guide introduces the company, your people, and the practical details for your first days.',
+      'Starting somewhere new should feel exciting, not confusing. This short guide introduces the company, your people, and the practical details for your first month.',
     details: [
       { label: 'Company', value: 'Meridian' },
       { label: 'People', value: '200 colleagues' },
@@ -48,9 +47,9 @@ export const onboardingContent = {
   },
   company: {
     eyebrow: 'Meet Meridian',
-    title: 'A company built around useful work and good people.',
+    title: 'What Meridian builds and how we work.',
     description:
-      'Meridian is a software development company creating products that make everyday work and learning more effective, including an AI scheduling app, an interactive AI-powered learning app, and more. We value clarity, ownership, and thoughtful collaboration.',
+      'Meridian is a software development company creating products that make everyday work and learning more effective, including an AI scheduling app, an interactive AI-powered learning platform, and more. We believe close collaboration between teammates leads to stronger ideas and better products for the people who use them.',
     stats: [
       { value: '200', label: 'employees' },
       { value: '5', label: 'departments' },
@@ -72,7 +71,7 @@ export const onboardingContent = {
     ],
     principleTitle: 'How we work together',
     principles: [
-      'Ask yourself what the customer needs before what is easiest to build.',
+      'Ask the customer clearly about the desired outcome.',
       'Ask early when something is unclear.',
       'Treat feedback as a tool for better work.',
       'Make decisions with the customer and product in mind.',
@@ -80,9 +79,9 @@ export const onboardingContent = {
   },
   firstDay: {
     eyebrow: 'Your first day',
-    title: 'A calm start, one conversation at a time.',
+    title: 'Your first day, from arrival to wrap-up.',
     description:
-      'Your first day is designed for orientation, not output. The goal is to meet your closest collaborators, get access to the essentials, and leave knowing what the rest of the week looks like.',
+      'Your first day is designed for orientation. The goal is to meet your closest collaborators, get access to the essentials, and leave knowing what the rest of the week looks like.',
     timeline: [
       { time: '09:00', title: 'Arrive and check in', description: 'Arrive at Meridian HQ at 36 Park Avenue, Boston. Present your national ID at the security desk for verification; they will direct you to Floor 3, Office C9, where your manager will meet you.' },
       { time: '09:30', title: 'Meet your team and role', description: 'Your manager will introduce you to your role and walk you through your responsibilities and first tasks, and explain how people and work are organized at Meridian.' },
@@ -96,7 +95,7 @@ export const onboardingContent = {
   },
   team: {
     eyebrow: 'Your people',
-    title: 'The small circle you can rely on.',
+    title: 'Meet your manager and immediate team.',
     description:
       'Your manager provides direction and context. Your teammates are the people you will build, learn, and solve problems with every day.',
     managerLabel: 'Your manager',
@@ -108,7 +107,7 @@ export const onboardingContent = {
   },
   role: {
     eyebrow: 'Your role',
-    title: 'Build with purpose, learn in the open.',
+    title: 'Your engineering role, tools, and workflow.',
     description:
       'Engineering at Meridian is product-first: understand the user problem, choose the simplest durable solution, and learn from real feedback.',
     stackTitle: 'Our development stack',
@@ -129,7 +128,7 @@ export const onboardingContent = {
     ],
     workflowTitle: 'A healthy Git workflow',
     workflow: [
-      'Create a short-lived branch for one focused change.',
+      'Create a branch for one focused change.',
       'Make small, meaningful commits that explain intent.',
       'Open a pull request, describe what changed, and explain how you tested it.',
       'Respond to review as a technical conversation, not a personal judgment.',
@@ -145,7 +144,7 @@ export const onboardingContent = {
   },
   schedule: {
     eyebrow: 'Your schedule',
-    title: 'Structure where it helps, flexibility where it matters.',
+    title: 'Your office hours and hybrid work week.',
     description:
       'Working arrangements at Meridian vary by department. For your role, you will work at least three days from the office and may work remotely for up to two days each week. You are also welcome to work from the office all five days. Working days are Monday to Friday.',
     cards: [
@@ -158,15 +157,15 @@ export const onboardingContent = {
     note: 'Plan to begin in the office unless your manager tells you otherwise. You will agree on a regular schedule during your first-week check-in.',
   },
   tools: {
-    eyebrow: 'Communication tools',
-    title: 'Two tools, each with a clear purpose.',
+    eyebrow: 'Staying connected',
+    title: 'Communication tools',
     description:
       'Good communication is less about being constantly online and more about communicating openly with your team while respecting people’s focus.',
     tools: [
       {
         name: 'Slack',
         purpose: 'Everyday written communication',
-        description: 'Use channels for work others may benefit from, threads to keep discussion together, and direct messages for genuinely private conversations.',
+        description: 'Use Slack to send messages, share files, organize team conversations in channels and threads, and coordinate work without needing a meeting.',
         practices: ['Set a clear status when unavailable', 'Prefer channels over hidden group messages', 'Summarize decisions where the team can find them'],
         href: 'https://slack.com/help',
         tutorialHref: 'https://www.youtube.com/watch?v=2CGppw8cHyU',
@@ -174,7 +173,7 @@ export const onboardingContent = {
       {
         name: 'Google Meet',
         purpose: 'Live conversations and collaboration',
-        description: 'Use Meet when a topic is easier to resolve together, for scheduled ceremonies, or when nuance matters more than another long message.',
+        description: 'Use Google Meet to hold video calls, share your screen, present work, and collaborate with teammates in real time from any location.',
         practices: ['Add an agenda to planned meetings', 'Join on time and prepared', 'Record decisions and actions after the call'],
         href: 'https://meet.google.com/',
         tutorialHref: 'https://www.youtube.com/watch?v=7KVZvUxQXMA',
@@ -186,7 +185,7 @@ export const onboardingContent = {
   },
   resources: {
     eyebrow: 'Your support contacts',
-    title: 'Know who to ask when you need help.',
+    title: 'Meet your HR and technical support contacts.',
     description:
       'These are your main contacts for employment questions and technical support. You can email them directly whenever you need guidance.',
     contactDescriptions: {
@@ -199,7 +198,7 @@ export const onboardingContent = {
   },
   amenities: {
     eyebrow: 'Office and benefits',
-    title: 'A few things that make work easier.',
+    title: 'What the office and your benefits provide.',
     description:
       'Meridian provides practical office amenities and employee benefits to support your work, wellbeing, and development.',
     sections: [
