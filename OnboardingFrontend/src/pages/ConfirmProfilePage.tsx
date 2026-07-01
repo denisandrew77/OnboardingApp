@@ -85,6 +85,10 @@ export function ConfirmProfilePage() {
               <span>{confirmProfile.nextLabel}</span>
               <strong>{confirmProfile.nextTitle}</strong>
             </div>
+            <Link className="button button--primary success-action" to="/onboarding/welcome">
+              {confirmProfile.nextAction}
+              <span aria-hidden="true">→</span>
+            </Link>
           </section>
         ) : (
           <section className="confirm-panel">

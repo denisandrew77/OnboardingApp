@@ -160,6 +160,10 @@
   font-size: 18px;
 }
 
+.success-action {
+  margin-top: 20px;
+}
+
 @keyframes spin {
   to {
     transform: rotate(360deg);
