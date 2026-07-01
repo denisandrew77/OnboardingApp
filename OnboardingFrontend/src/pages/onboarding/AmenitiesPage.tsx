@@ -1,4 +1,5 @@
 import { OnboardingLayout } from '../../components/OnboardingLayout'
+import { OnboardingStepHeader } from '../../components/OnboardingStepHeader'
 import { onboardingContent } from '../../content/onboarding'
 import './AmenitiesPage.css'
 
@@ -8,11 +9,11 @@ export function AmenitiesPage() {
   return (
     <OnboardingLayout step="amenities">
       <section>
-        <div className="step-header">
-          <p className="eyebrow">{amenities.eyebrow}</p>
-          <h1>{amenities.title}</h1>
-          <p className="step-description">{amenities.description}</p>
-        </div>
+        <OnboardingStepHeader
+          description={amenities.description}
+          eyebrow={amenities.eyebrow}
+          title={amenities.title}
+        />
 
         <div className="amenities-sections">
           {amenities.sections.map((section) => (

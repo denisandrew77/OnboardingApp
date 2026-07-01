@@ -1,4 +1,5 @@
 import { OnboardingLayout } from '../../components/OnboardingLayout'
+import { OnboardingStepHeader } from '../../components/OnboardingStepHeader'
 import { onboardingContent } from '../../content/onboarding'
 import './CompanyPage.css'
 
@@ -8,11 +9,11 @@ export function CompanyPage() {
   return (
     <OnboardingLayout step="company">
       <section>
-        <div className="step-header">
-          <p className="eyebrow">{company.eyebrow}</p>
-          <h1>{company.title}</h1>
-          <p className="step-description">{company.description}</p>
-        </div>
+        <OnboardingStepHeader
+          description={company.description}
+          eyebrow={company.eyebrow}
+          title={company.title}
+        />
 
         <dl className="company-stats">
           {company.stats.map((stat) => (
