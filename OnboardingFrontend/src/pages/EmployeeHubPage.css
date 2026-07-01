@@ -1,0 +1,267 @@
+.employee-hub {
+  padding: 72px 0 88px;
+}
+
+.hub-header {
+  display: flex;
+  gap: 40px;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 42px;
+}
+
+.hub-header h1 {
+  max-width: 800px;
+  margin-bottom: 18px;
+  font-size: clamp(44px, 5vw, 66px);
+}
+
+.hub-header > div > p:last-child {
+  max-width: 720px;
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.hub-revisit-link {
+  display: inline-flex;
+  flex: 0 0 auto;
+  gap: 16px;
+  align-items: center;
+  padding-bottom: 5px;
+  color: var(--forest-dark);
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.hub-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 36px;
+}
+
+.hub-search > svg {
+  position: absolute;
+  left: 20px;
+  width: 21px;
+  color: var(--forest);
+  pointer-events: none;
+}
+
+.hub-search input {
+  width: 100%;
+  height: 62px;
+  padding: 0 140px 0 55px;
+  border: 1px solid var(--line-strong);
+  border-radius: 7px;
+  color: var(--ink);
+  background: var(--surface);
+  font: inherit;
+  font-size: 14px;
+}
+
+.hub-search input::placeholder {
+  color: var(--ink-soft);
+}
+
+.hub-search button {
+  position: absolute;
+  right: 18px;
+  padding: 8px;
+  border: 0;
+  cursor: pointer;
+  color: var(--forest-dark);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hub-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+.hub-card {
+  overflow: hidden;
+}
+
+.hub-card summary {
+  display: grid;
+  grid-template-columns: 48px 1fr 24px;
+  gap: 16px;
+  align-items: start;
+  padding: 24px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.hub-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.hub-card__icon {
+  display: grid;
+  width: 48px;
+  height: 48px;
+  place-items: center;
+  border-radius: 10px;
+  color: var(--forest);
+  background: var(--forest-pale);
+}
+
+.hub-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.hub-card__heading {
+  display: grid;
+}
+
+.hub-card__heading small {
+  margin-bottom: 5px;
+  color: var(--forest);
+  font-size: 9px;
+  font-weight: 750;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.hub-card__heading strong {
+  margin-bottom: 7px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.hub-card__heading > span {
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.hub-card__toggle {
+  color: var(--forest);
+  font-size: 22px;
+  transition: transform 180ms ease;
+}
+
+.hub-card[open] .hub-card__toggle {
+  transform: rotate(45deg);
+}
+
+.hub-card__details {
+  margin: 0 24px 24px 88px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.hub-card__details ul {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding-left: 18px;
+  color: var(--ink-soft);
+  font-size: 12px;
+  line-height: 1.55;
+}
+
+.hub-card__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 18px;
+}
+
+.hub-card__links a {
+  display: inline-flex;
+  gap: 10px;
+  color: var(--forest-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.hub-loading {
+  margin: -18px 0 24px;
+  color: var(--ink-soft);
+  font-size: 12px;
+}
+
+.hub-empty {
+  padding: 56px;
+  border: 1px solid var(--line);
+  text-align: center;
+  background: var(--surface);
+}
+
+.hub-empty h2 {
+  font-size: 26px;
+}
+
+.hub-empty p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .employee-hub {
+    padding-top: 48px;
+  }
+
+  .hub-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hub-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hub-search input {
+    padding-right: 54px;
+  }
+
+  .hub-search button {
+    width: 40px;
+    overflow: hidden;
+    color: transparent;
+  }
+
+  .hub-search button::after {
+    color: var(--forest-dark);
+    content: '×';
+    font-size: 20px;
+  }
+
+  .hub-card summary {
+    grid-template-columns: 42px 1fr 20px;
+    gap: 12px;
+    padding: 20px;
+  }
+
+  .hub-card__icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .hub-card__details {
+    margin: 0 20px 20px;
+  }
+}
