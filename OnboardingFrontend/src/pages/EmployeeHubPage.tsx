@@ -1,8 +1,9 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { Link, Navigate } from 'react-router'
 import { getSupportContacts } from '../api/employeesApi'
 import { AppShell } from '../components/AppShell'
 import { resourceHubContent, type HubResource, type ResourceIcon } from '../content/resourceHub'
+import { onboardingContent } from '../content/onboarding'
 import { getSelectedEmployeeId, useSelectedEmployee } from '../hooks/useSelectedEmployee'
 import type { SupportContact } from '../models/employee'
 import './EmployeeHubPage.css'
@@ -27,7 +28,7 @@ function ResourceIconGraphic({ icon }: { icon: ResourceIcon }) {
   )
 }
 
-function ResourceCard({ resource }: { resource: HubResource }) {
+function ResourceCard({ resource, onOpenTechStack }: { resource: HubResource; onOpenTechStack: () => void }) {
   return (
     <details className="hub-card content-card">
       <summary>
@@ -45,7 +46,11 @@ function ResourceCard({ resource }: { resource: HubResource }) {
         </ul>
         {resource.links && (
           <div className="hub-card__links">
-            {resource.links.map((link) => link.href.startsWith('/') ? (
+            {resource.links.map((link) => link.action === 'tech-stack' ? (
+              <button key={link.label} onClick={onOpenTechStack} type="button">
+                {link.label}<span aria-hidden="true">→</span>
+              </button>
+            ) : link.href?.startsWith('/') ? (
               <Link key={link.href} to={link.href}>{link.label}<span aria-hidden="true">→</span></Link>
             ) : (
               <a href={link.href} key={link.href} rel="noreferrer" target="_blank">{link.label}<span aria-hidden="true">↗</span></a>
@@ -63,6 +68,7 @@ export function EmployeeHubPage() {
   const [query, setQuery] = useState('')
   const [contacts, setContacts] = useState<SupportContact[]>([])
   const [contactsLoading, setContactsLoading] = useState(true)
+  const techStackDialog = useRef<HTMLDialogElement>(null)
 
   useEffect(() => {
     const controller = new AbortController()
@@ -80,8 +86,7 @@ export function EmployeeHubPage() {
       icon: 'person',
       title: `${contact.firstName} ${contact.lastName}`,
       summary: contact.jobTitle,
-      details: resourceHubContent.contactDetails[contact.contactType],
-      links: [{ label: `Email ${contact.firstName}`, href: `mailto:${contact.email}` }],
+      details: [...resourceHubContent.contactDetails[contact.contactType], `Email: ${contact.email}`],
       keywords: [contact.email, contact.contactType, 'contact', 'help', 'support'],
     }))
 
@@ -137,7 +142,13 @@ export function EmployeeHubPage() {
 
         {filteredResources.length > 0 ? (
           <div className="hub-grid">
-            {filteredResources.map((resource) => <ResourceCard key={resource.id} resource={resource} />)}
+            {filteredResources.map((resource) => (
+              <ResourceCard
+                key={resource.id}
+                onOpenTechStack={() => techStackDialog.current?.showModal()}
+                resource={resource}
+              />
+            ))}
           </div>
         ) : (
           <div className="hub-empty">
@@ -145,6 +156,25 @@ export function EmployeeHubPage() {
             <p>{resourceHubContent.noResultsDescription}</p>
           </div>
         )}
+
+        <dialog className="tech-stack-dialog" ref={techStackDialog}>
+          <div className="tech-stack-dialog__heading">
+            <div>
+              <p className="eyebrow">Engineering at Meridian</p>
+              <h2>{onboardingContent.role.stackTitle}</h2>
+            </div>
+            <button aria-label="Close tech stack" onClick={() => techStackDialog.current?.close()} type="button">×</button>
+          </div>
+          <div className="tech-stack-dialog__grid">
+            {onboardingContent.role.stack.map((item) => (
+              <article key={item.layer}>
+                <small>{item.layer}</small>
+                <h3>{item.tools}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </dialog>
       </main>
     </AppShell>
   )
