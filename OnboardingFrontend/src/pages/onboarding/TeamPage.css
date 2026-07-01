@@ -1,0 +1,148 @@
+.org-chart {
+  padding: 36px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(255, 253, 249, 0.8);
+  box-shadow: var(--shadow);
+}
+
+.org-chart__team-name,
+.manager-branch > p,
+.team-branch > p {
+  color: var(--ink-soft);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.11em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.org-chart__team-name {
+  margin-bottom: 34px;
+}
+
+.manager-branch {
+  display: grid;
+  justify-items: center;
+}
+
+.person-card {
+  display: flex;
+  min-width: 0;
+  gap: 14px;
+  align-items: center;
+  padding: 17px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+}
+
+.person-card--manager {
+  width: min(100%, 380px);
+  border-color: rgba(63, 98, 80, 0.35);
+  box-shadow: 0 12px 30px rgba(40, 52, 45, 0.06);
+}
+
+.person-card--current {
+  border-color: var(--forest);
+  background: var(--forest-pale);
+}
+
+.person-card > div {
+  display: grid;
+  min-width: 0;
+  gap: 3px;
+}
+
+.person-card strong {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 17px;
+}
+
+.person-card small {
+  padding: 2px 6px;
+  border-radius: 99px;
+  color: var(--forest-dark);
+  background: #fff;
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.person-card span:not(.avatar),
+.person-card a {
+  overflow: hidden;
+  color: var(--ink-soft);
+  font-size: 11px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.person-card a:hover {
+  color: var(--forest-dark);
+}
+
+.org-connector {
+  width: 1px;
+  height: 52px;
+  margin: 0 auto;
+  background: var(--line-strong);
+}
+
+.team-branch {
+  position: relative;
+  padding-top: 20px;
+  border-top: 1px solid var(--line-strong);
+}
+
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.manager-pending {
+  color: var(--ink-soft);
+  font-size: 13px;
+}
+
+.team-state {
+  display: grid;
+  max-width: 620px;
+  justify-items: start;
+  padding: 34px;
+}
+
+.team-state p {
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+.team-state .button {
+  margin-top: 14px;
+}
+
+@media (max-width: 900px) {
+  .people-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .org-chart {
+    padding: 22px;
+  }
+
+  .people-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .person-card {
+    padding: 14px;
+  }
+}
