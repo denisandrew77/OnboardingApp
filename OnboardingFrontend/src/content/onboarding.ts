@@ -146,7 +146,7 @@ export const onboardingContent = {
     eyebrow: 'Your schedule',
     title: 'Structure where it helps, flexibility where it matters.',
     description:
-      'Working arrangements at Meridian vary by department. For your role, you will work at least three days from the office and may work remotely for up to two days each week. You are also welcome to work from the office all five days.',
+      'Working arrangements at Meridian vary by department. For your role, you will work at least three days from the office and may work remotely for up to two days each week. You are also welcome to work from the office all five days. Working days are Monday to Friday.',
     cards: [
       { title: 'Office days', value: '3–5 days weekly', description: 'Office hours are 09:00–17:00. Three office days are required, and you may choose to work from the office for the full week.' },
       { title: 'Remote days', value: 'Up to 2 days', description: 'Remote days are optional and will be discussed and agreed with your manager.' },
