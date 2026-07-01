@@ -113,8 +113,8 @@ export const onboardingContent = {
     stack: [
       { layer: 'Frontend', tools: 'React · TypeScript · Vite', description: 'Accessible, responsive interfaces with clear component boundaries.' },
       { layer: 'Backend', tools: '.NET 9 · ASP.NET Core · EF Core', description: 'Typed APIs, focused services, and explicit data relationships.' },
-      { layer: 'Data', tools: 'PostgreSQL · Docker', description: 'Relational persistence and repeatable local environments.' },
-      { layer: 'Delivery', tools: 'Git · GitHub · Pull requests', description: 'Small branches, reviewable changes, and shared ownership.' },
+      { layer: 'Database', tools: 'PostgreSQL · Docker', description: 'Relational persistence and repeatable local environments.' },
+      { layer: 'Delivery', tools: 'Git · GitHub', description: 'Small branches, reviewable changes, and shared ownership.' },
     ],
     valuesTitle: 'What good engineering looks like here',
     values: [
@@ -129,7 +129,7 @@ export const onboardingContent = {
     workflow: [
       'Create a short-lived branch for one focused change.',
       'Make small, meaningful commits that explain intent.',
-      'Open a pull request with the problem, approach, testing, and screenshots when useful.',
+      'Open a pull request, describe what changed, and explain how you tested it.',
       'Respond to review as a technical conversation, not a personal judgment.',
       'Merge only after checks pass and the change is understood.',
     ],
@@ -146,10 +146,10 @@ export const onboardingContent = {
     eyebrow: 'Your schedule',
     title: 'Structure where it helps, flexibility where it matters.',
     description:
-      'Meridian works in a hybrid model with three office days and two remote days each week. Your manager will help align the exact rhythm with your team.',
+      'Working arrangements at Meridian vary by department. For your role, you will work at least three days from the office and may work remotely for up to two days each week. You are also welcome to work from the office all five days.',
     cards: [
-      { title: 'Office days', value: '09:00–17:00', description: 'Use office time for collaboration, planning, workshops, and conversations that benefit from being together.' },
-      { title: 'Remote days', value: '2 days weekly', description: 'Your two remote days and available hours will be discussed and agreed with your manager.' },
+      { title: 'Office days', value: '3–5 days weekly', description: 'Office hours are 09:00–17:00. Three office days are required, and you may choose to work from the office for the full week.' },
+      { title: 'Remote days', value: 'Up to 2 days', description: 'Remote days are optional and will be discussed and agreed with your manager.' },
       { title: 'Shared expectations', value: 'Communicate early', description: 'Keep your calendar current, signal changes, and make your availability visible to the team.' },
     ],
     noteTitle: 'Your first week',
