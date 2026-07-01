@@ -1,0 +1,64 @@
+.onboarding-page {
+  display: flex;
+  flex-direction: column;
+  padding: 68px 0 54px;
+}
+
+.onboarding-content {
+  flex: 1;
+}
+
+.onboarding-navigation {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.step-header {
+  max-width: 780px;
+  margin-bottom: 48px;
+}
+
+.step-header h1 {
+  margin-bottom: 20px;
+  font-size: clamp(44px, 6vw, 68px);
+}
+
+.step-description {
+  max-width: 720px;
+  margin-bottom: 0;
+  color: var(--ink-soft);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.section-title {
+  margin-bottom: 20px;
+  font-size: 27px;
+}
+
+.content-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  box-shadow: 0 12px 35px rgba(40, 52, 45, 0.05);
+}
+
+@media (max-width: 560px) {
+  .onboarding-page {
+    padding: 46px 0 38px;
+  }
+
+  .onboarding-navigation {
+    margin-top: 44px;
+  }
+
+  .onboarding-navigation .button {
+    min-width: 0;
+    gap: 12px;
+    padding-inline: 16px;
+  }
+}
