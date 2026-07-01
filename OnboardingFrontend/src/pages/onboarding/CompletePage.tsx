@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { OnboardingLayout } from '../../components/OnboardingLayout'
 import { onboardingContent } from '../../content/onboarding'
 import { useSelectedEmployee } from '../../hooks/useSelectedEmployee'
@@ -8,6 +8,7 @@ import './CompletePage.css'
 export function CompletePage() {
   const { complete } = onboardingContent
   const { employee } = useSelectedEmployee()
+  const navigate = useNavigate()
   const [isComplete, setIsComplete] = useState(
     () => localStorage.getItem('meridian.onboardingCompletedAt') !== null,
   )
@@ -16,6 +17,7 @@ export function CompletePage() {
     localStorage.setItem('meridian.onboardingCompletedAt', new Date().toISOString())
     localStorage.setItem('meridian.onboardingStep', 'complete')
     setIsComplete(true)
+    navigate('/employee-hub')
   }
 
   return (
@@ -36,6 +38,7 @@ export function CompletePage() {
           <div className="completion-success result-enter" aria-live="polite">
             <strong>{complete.completedLabel}</strong>
             <p>{complete.completedMessage}</p>
+            <Link className="completion-hub-link" to="/employee-hub">Open employee resource hub</Link>
             <Link to="/onboarding/welcome">{complete.restartAction}</Link>
           </div>
         ) : (

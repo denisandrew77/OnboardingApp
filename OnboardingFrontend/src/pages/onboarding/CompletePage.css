@@ -84,6 +84,12 @@
   font-weight: 700;
 }
 
+.completion-success .completion-hub-link {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
 @media (max-width: 600px) {
   .completion-recap {
     grid-template-columns: 1fr;
