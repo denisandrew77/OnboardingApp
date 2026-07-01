@@ -82,15 +82,15 @@ export const onboardingContent = {
     description:
       'Your first day is designed for orientation, not output. The goal is to meet your closest collaborators, get access to the essentials, and leave knowing what the rest of the week looks like.',
     timeline: [
-      { time: '09:00', title: 'Arrive and get settled', description: 'Meet your manager, receive building access, and find your workspace.' },
-      { time: '09:30', title: 'Welcome conversation', description: 'Review your role, the team, and the plan for your first week.' },
-      { time: '10:30', title: 'Accounts and equipment', description: 'Set up your device, work email, Slack, Google Meet, and development access.' },
+      { time: '09:00', title: 'Arrive and check in', description: 'Arrive at Meridian HQ at 36 Park Avenue, Boston. Present your national ID at the security desk for verification; they will direct you to Floor 3, Office C9, where your manager will meet you.' },
+      { time: '09:30', title: 'Meet your team and role', description: 'Your manager will introduce you to your role and walk you through your responsibilities and first tasks, and explain how people and work are organized at Meridian.' },
+      { time: '10:00', title: 'Receive your laptop and tools', description: 'You will receive your work laptop and everything you need to get started, including your work email, Slack, Google Meet, and required software.', engineeringNote: ' You will also receive development access.' },
       { time: '12:30', title: 'Lunch with the team', description: 'A relaxed chance to meet the people you will work with most often.' },
       { time: '14:00', title: 'Product and technical tour', description: 'See what Meridian builds, who it serves, and how the systems fit together.' },
       { time: '16:30', title: 'Wrap-up with your manager', description: 'Resolve blockers and agree on a clear starting point for day two.' },
     ],
     bringTitle: 'What to bring',
-    bringItems: ['A valid ID for building access', 'Any documents requested by HR', 'Questions—there is no expectation to know everything'],
+    bringItems: ['A valid national ID for building access', 'Questions—there is no expectation to know everything'],
   },
   team: {
     eyebrow: 'Your people',

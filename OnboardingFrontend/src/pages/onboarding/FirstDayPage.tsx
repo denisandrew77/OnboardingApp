@@ -1,9 +1,32 @@
+import { useEffect, useState } from 'react'
+import { getEmployeeTeam } from '../../api/employeesApi'
 import { OnboardingLayout } from '../../components/OnboardingLayout'
 import { onboardingContent } from '../../content/onboarding'
+import { useSelectedEmployee } from '../../hooks/useSelectedEmployee'
 import './FirstDayPage.css'
 
 export function FirstDayPage() {
   const { firstDay } = onboardingContent
+  const { employeeId } = useSelectedEmployee()
+  const [isEngineering, setIsEngineering] = useState(false)
+
+  useEffect(() => {
+    if (employeeId === null) {
+      return
+    }
+
+    const controller = new AbortController()
+
+    getEmployeeTeam(employeeId, controller.signal)
+      .then((team) => setIsEngineering(team.department.name.toLowerCase() === 'engineering'))
+      .catch((error: unknown) => {
+        if (!(error instanceof DOMException && error.name === 'AbortError')) {
+          setIsEngineering(false)
+        }
+      })
+
+    return () => controller.abort()
+  }, [employeeId])
 
   return (
     <OnboardingLayout step="first-day">
@@ -21,7 +44,10 @@ export function FirstDayPage() {
                 <time>{item.time}</time>
                 <div>
                   <h3>{item.title}</h3>
-                  <p>{item.description}</p>
+                  <p>
+                    {item.description}
+                    {'engineeringNote' in item && isEngineering && item.engineeringNote}
+                  </p>
                 </div>
               </li>
             ))}
