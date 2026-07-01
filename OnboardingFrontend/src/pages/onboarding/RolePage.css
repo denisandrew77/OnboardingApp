@@ -1,0 +1,167 @@
+.role-profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 620px;
+  margin-bottom: 62px;
+}
+
+.role-profile div {
+  display: grid;
+  gap: 5px;
+  padding: 20px 24px;
+}
+
+.role-profile div:first-child {
+  border-right: 1px solid var(--line);
+}
+
+.role-profile span,
+.stack-card > span {
+  color: var(--ink-soft);
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.role-profile strong {
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 19px;
+}
+
+.role-loading {
+  color: var(--ink-soft);
+}
+
+.role-section {
+  margin-bottom: 64px;
+}
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.stack-card {
+  padding: 24px;
+}
+
+.stack-card h3 {
+  margin: 28px 0 8px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 20px;
+}
+
+.stack-card p,
+.engineering-values p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.engineering-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.engineering-values article {
+  padding: 24px 26px 24px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.engineering-values article:not(:nth-child(3n)) {
+  margin-right: 26px;
+  border-right: 1px solid var(--line);
+}
+
+.engineering-values h3 {
+  margin: 0 0 8px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 18px;
+}
+
+.workflow-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(240px, 0.6fr);
+  gap: 44px;
+  padding: 32px;
+}
+
+.workflow-section ol {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding-left: 22px;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.workflow-section aside {
+  display: grid;
+  align-content: start;
+}
+
+.workflow-section aside a {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 13px 0;
+  border-top: 1px solid var(--line);
+  color: var(--forest-dark);
+  font-size: 13px;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.workflow-section aside a:hover {
+  color: var(--ink);
+}
+
+@media (max-width: 820px) {
+  .engineering-values {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .engineering-values article:not(:nth-child(3n)) {
+    margin-right: 0;
+    border-right: 0;
+  }
+
+  .engineering-values article:nth-child(odd) {
+    margin-right: 24px;
+    border-right: 1px solid var(--line);
+  }
+
+  .workflow-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .role-profile,
+  .stack-grid,
+  .engineering-values {
+    grid-template-columns: 1fr;
+  }
+
+  .role-profile div:first-child {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .engineering-values article:nth-child(odd) {
+    margin-right: 0;
+    border-right: 0;
+  }
+
+  .workflow-section {
+    padding: 24px;
+  }
+}
