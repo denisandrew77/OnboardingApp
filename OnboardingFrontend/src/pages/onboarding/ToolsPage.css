@@ -77,15 +77,23 @@
   content: '';
 }
 
-.tool-card > a {
+.tool-links {
+  display: grid;
+}
+
+.tool-links a {
   display: flex;
   justify-content: space-between;
-  padding-top: 17px;
+  padding: 14px 0;
   border-top: 1px solid var(--line);
   color: var(--forest-dark);
   font-size: 13px;
   font-weight: 700;
   text-decoration: none;
+}
+
+.tool-links a:last-child {
+  padding-bottom: 0;
 }
 
 .focus-note {

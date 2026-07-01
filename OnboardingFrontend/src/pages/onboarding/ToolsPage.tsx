@@ -28,9 +28,14 @@ export function ToolsPage() {
               <ul>
                 {tool.practices.map((practice) => <li key={practice}>{practice}</li>)}
               </ul>
-              <a href={tool.href} rel="noreferrer" target="_blank">
-                Open {tool.name}<span aria-hidden="true">↗</span>
-              </a>
+              <div className="tool-links">
+                <a href={tool.tutorialHref} rel="noreferrer" target="_blank">
+                  Beginner tutorial<span aria-hidden="true">↗</span>
+                </a>
+                <a href={tool.href} rel="noreferrer" target="_blank">
+                  Open {tool.name}<span aria-hidden="true">↗</span>
+                </a>
+              </div>
             </article>
           ))}
         </div>

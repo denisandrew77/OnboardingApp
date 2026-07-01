@@ -159,7 +159,7 @@ export const onboardingContent = {
     eyebrow: 'Communication tools',
     title: 'Two tools, each with a clear purpose.',
     description:
-      'Good communication is less about being constantly online and more about choosing the right channel, adding context, and respecting people’s focus.',
+      'Good communication is less about being constantly online and more about communicating openly with your team while respecting people’s focus.',
     tools: [
       {
         name: 'Slack',
@@ -167,6 +167,7 @@ export const onboardingContent = {
         description: 'Use channels for work others may benefit from, threads to keep discussion together, and direct messages for genuinely private conversations.',
         practices: ['Set a clear status when unavailable', 'Prefer channels over hidden group messages', 'Summarize decisions where the team can find them'],
         href: 'https://slack.com/help',
+        tutorialHref: 'https://www.youtube.com/watch?v=2CGppw8cHyU',
       },
       {
         name: 'Google Meet',
@@ -174,6 +175,7 @@ export const onboardingContent = {
         description: 'Use Meet when a topic is easier to resolve together, for scheduled ceremonies, or when nuance matters more than another long message.',
         practices: ['Add an agenda to planned meetings', 'Join on time and prepared', 'Record decisions and actions after the call'],
         href: 'https://meet.google.com/',
+        tutorialHref: 'https://www.youtube.com/watch?v=7KVZvUxQXMA',
       },
     ],
     boundaryTitle: 'Protect focus time',
