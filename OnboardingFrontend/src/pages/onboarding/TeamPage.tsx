@@ -1,46 +1,27 @@
-import { useEffect, useState } from 'react'
 import { Link } from 'react-router'
-import { getEmployeeTeam } from '../../api/employeesApi'
+import { EmployeeAvatar } from '../../components/EmployeeAvatar'
 import { OnboardingLayout } from '../../components/OnboardingLayout'
+import { OnboardingStepHeader } from '../../components/OnboardingStepHeader'
 import { onboardingContent } from '../../content/onboarding'
+import { useEmployeeTeam } from '../../hooks/useEmployeeTeam'
 import { useSelectedEmployee } from '../../hooks/useSelectedEmployee'
-import type { TeamDetails } from '../../models/team'
 import './TeamPage.css'
 
 export function TeamPage() {
   const { team: content } = onboardingContent
   const { employee, employeeId, hasError: employeeError } = useSelectedEmployee()
-  const [team, setTeam] = useState<TeamDetails | null>(null)
-  const [teamError, setTeamError] = useState(false)
-
-  useEffect(() => {
-    if (employeeId === null) {
-      return
-    }
-
-    const controller = new AbortController()
-
-    getEmployeeTeam(employeeId, controller.signal)
-      .then(setTeam)
-      .catch((error: unknown) => {
-        if (!(error instanceof DOMException && error.name === 'AbortError')) {
-          setTeamError(true)
-        }
-      })
-
-    return () => controller.abort()
-  }, [employeeId])
+  const { team, hasError: teamError } = useEmployeeTeam(employeeId)
 
   const hasError = employeeError || teamError
 
   return (
     <OnboardingLayout step="team">
       <section>
-        <div className="step-header">
-          <p className="eyebrow">{content.eyebrow}</p>
-          <h1>{content.title}</h1>
-          <p className="step-description">{content.description}</p>
-        </div>
+        <OnboardingStepHeader
+          description={content.description}
+          eyebrow={content.eyebrow}
+          title={content.title}
+        />
 
         {hasError ? (
           <div className="team-state content-card">
@@ -63,9 +44,10 @@ export function TeamPage() {
               <p>{content.managerLabel}</p>
               {employee.manager ? (
                 <article className="person-card person-card--manager">
-                  <span className="avatar" aria-hidden="true">
-                    {employee.manager.firstName[0]}{employee.manager.lastName[0]}
-                  </span>
+                  <EmployeeAvatar
+                    firstName={employee.manager.firstName}
+                    lastName={employee.manager.lastName}
+                  />
                   <div>
                     <strong>{employee.manager.firstName} {employee.manager.lastName}</strong>
                     <span>{employee.manager.jobTitle}</span>
@@ -90,9 +72,7 @@ export function TeamPage() {
                       className={isCurrentEmployee ? 'person-card person-card--current' : 'person-card'}
                       key={member.id}
                     >
-                      <span className="avatar" aria-hidden="true">
-                        {member.firstName[0]}{member.lastName[0]}
-                      </span>
+                      <EmployeeAvatar firstName={member.firstName} lastName={member.lastName} />
                       <div>
                         <strong>
                           {member.firstName} {member.lastName}
