@@ -52,7 +52,6 @@ export const onboardingContent = {
     stats: [
       { value: '200', label: 'employees' },
       { value: '5', label: 'departments' },
-      { value: '2–3', label: 'new colleagues each month' },
       {
         value: 'Hybrid',
         label: 'work week',
