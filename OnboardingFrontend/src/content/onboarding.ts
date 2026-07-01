@@ -113,10 +113,10 @@ export const onboardingContent = {
       'Engineering at Meridian is product-first: understand the user problem, choose the simplest durable solution, and learn from real feedback.',
     stackTitle: 'Our development stack',
     stack: [
-      { layer: 'Frontend', tools: 'React · TypeScript · Vite', description: 'Accessible, responsive interfaces with clear component boundaries.' },
-      { layer: 'Backend', tools: '.NET 9 · ASP.NET Core · EF Core', description: 'Typed APIs, focused services, and explicit data relationships.' },
-      { layer: 'Database', tools: 'PostgreSQL · Docker', description: 'Relational persistence and repeatable local environments.' },
-      { layer: 'Delivery', tools: 'Git · GitHub', description: 'Small branches, reviewable changes, and shared ownership.' },
+      { layer: 'Frontend', tools: 'React · TypeScript · Vite', description: 'Builds the pages and interactions people see and use in their browser.' },
+      { layer: 'Backend', tools: '.NET 9 · ASP.NET Core · EF Core', description: 'Handles business rules, provides secure APIs, and connects the application to its data.' },
+      { layer: 'Database', tools: 'PostgreSQL · Docker', description: 'Stores application data reliably, while Docker keeps local development consistent.' },
+      { layer: 'Delivery', tools: 'Git · GitHub', description: 'Branches for different features and small incremental changes.' },
     ],
     valuesTitle: 'What good engineering looks like here',
     values: [
@@ -125,7 +125,7 @@ export const onboardingContent = {
       { title: 'Open-minded', description: 'Invite other perspectives and be willing to replace your first idea with a better one.' },
       { title: 'Solution-driven', description: 'Surface problems clearly, then bring options, trade-offs, and a recommended next step.' },
       { title: 'Quality is shared', description: 'Test important behavior, review thoughtfully, document decisions, and improve the code you touch.' },
-      { title: 'Ask before blocked', description: 'Try to understand the problem, share what you attempted, and ask for context before losing momentum.' },
+      { title: 'Request help when needed', description: 'Try to understand the problem, share what you attempted, and ask for help before losing momentum.' },
     ],
     workflowTitle: 'A healthy Git workflow',
     workflow: [
@@ -136,10 +136,9 @@ export const onboardingContent = {
       'Merge only after checks pass and the change is understood.',
     ],
     references: [
-      { label: 'GitHub flow', href: 'https://docs.github.com/en/get-started/using-github/github-flow' },
+      { label: 'Git tutorial', href: 'https://education.github.com/git-cheat-sheet-education.pdf' },
       { label: 'Pull request reviews', href: 'https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews' },
       { label: 'Agile principles', href: 'https://agilemanifesto.org/principles' },
-      { label: '.NET diagnostics', href: 'https://learn.microsoft.com/en-us/dotnet/core/diagnostics/' },
     ],
     profileLabel: 'Your starting point',
     loading: 'Loading your role…',
@@ -152,6 +151,7 @@ export const onboardingContent = {
     cards: [
       { title: 'Office days', value: '3–5 days weekly', description: 'Office hours are 09:00–17:00. Three office days are required, and you may choose to work from the office for the full week.' },
       { title: 'Remote days', value: 'Up to 2 days', description: 'Remote days are optional and will be discussed and agreed with your manager.' },
+      { title: 'Meal break', value: '12:30–13:00', description: 'This time is reserved for lunch and a proper break from work.' },
       { title: 'Shared expectations', value: 'Communicate early', description: 'Keep your calendar current, signal changes, and make your availability visible to the team.' },
     ],
     noteTitle: 'Your first week',
@@ -237,7 +237,7 @@ export const onboardingContent = {
     ],
     finishAction: 'Complete onboarding',
     completedLabel: 'Onboarding complete',
-    completedMessage: 'Your main employee dashboard is the next part of the experience.',
+    completedMessage: 'Your employee resource hub is ready whenever you need contacts, tools, or workplace information.',
     restartAction: 'Revisit from the beginning',
   },
 } as const
