@@ -129,8 +129,6 @@ export const resourceHubContent = {
       summary: 'Where to learn about compensation, eligibility, health support, and leave.',
       details: [
         'Eligible employees may receive performance-based salary bonuses. HR can explain the criteria, timing, and terms for your role.',
-        'HR can guide you through health and wellbeing coverage and enrollment.',
-        'Your contract and company policy explain annual leave, public holidays, and other types of leave.',
       ],
       keywords: ['salary', 'money', 'health', 'leave', 'holiday', 'vacation'],
     },
