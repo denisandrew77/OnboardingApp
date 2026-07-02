@@ -8,7 +8,7 @@ export const profileSetupContent = {
     footerMode: 'Demo experience',
   },
   welcome: {
-    eyebrow: 'Your first days at Meridian',
+    eyebrow: 'Your first month at Meridian',
     title: 'A clearer start begins here.',
     description:
       'Meet the people you will work with, understand how the company works, and arrive on your first day knowing what comes next.',
@@ -38,7 +38,7 @@ export const profileSetupContent = {
     back: 'Back',
     eyebrow: "Let's find you",
     title: 'What is your name?',
-    description: "Enter your name as it appears in Meridian's employee directory.",
+    description: "Enter your name as it appears in your national ID.",
     firstNameLabel: 'First name',
     firstNamePlaceholder: 'Daniel',
     lastNameLabel: 'Last name',

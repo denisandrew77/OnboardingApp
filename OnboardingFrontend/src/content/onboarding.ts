@@ -83,10 +83,10 @@ export const onboardingContent = {
     description:
       'Your first day is designed for orientation. The goal is to meet your closest collaborators, get access to the essentials, and leave knowing what the rest of the week looks like.',
     timeline: [
-      { time: '09:00', title: 'Arrive and check in', description: 'Arrive at Meridian HQ at 36 Park Avenue, Boston. Present your national ID at the security desk for verification; they will direct you to Floor 3, Office C9, where your manager will meet you.' },
+      { time: '09:00', title: 'Arrive and check in', description: 'Arrive at Meridian HQ at 36 Park Avenue, Boston. Present your national ID at the security desk for verification and you will receive the building acces code; they will direct you to Floor 3, Office C9, where your manager will meet you.' },
       { time: '09:30', title: 'Meet your team and role', description: 'Your manager will introduce you to your role and walk you through your responsibilities and first tasks, and explain how people and work are organized at Meridian.' },
       { time: '10:00', title: 'Receive your laptop and tools', description: 'You will receive your work laptop and everything you need to get started, including your work email, Slack, Google Meet, and required software.', engineeringNote: ' You will also receive development access.' },
-      { time: '12:30', title: 'Lunch with the team', description: 'A relaxed chance to meet the people you will work with most often.' },
+      { time: '12:30', title: 'Lunch with the team', description: 'A relaxed chance to connect the people you will work with most often.' },
       { time: '14:00', title: 'Product and technical tour', description: 'See what Meridian builds, who it serves, and how the systems fit together.' },
       { time: '16:30', title: 'Wrap-up with your manager', description: 'Resolve blockers and agree on a clear starting point for day two.' },
     ],
@@ -146,10 +146,9 @@ export const onboardingContent = {
     eyebrow: 'Your schedule',
     title: 'Your office hours and hybrid work week.',
     description:
-      'Working arrangements at Meridian vary by department. For your role, you will work at least three days from the office and may work remotely for up to two days each week. You are also welcome to work from the office all five days. Working days are Monday to Friday.',
+      'All Meridian employees follow a hybrid schedule, working three days from the office and two days remotely each week. Working days are Monday to Friday.',
     cards: [
-      { title: 'Office days', value: '3–5 days weekly', description: 'Office hours are 09:00–17:00. Three office days are required, and you may choose to work from the office for the full week.' },
-      { title: 'Remote days', value: 'Up to 2 days', description: 'Remote days are optional and will be discussed and agreed with your manager.' },
+      { title: 'Hybrid work week', value: '3 office and 2 remote days', description: 'Office hours are 09:00–17:00. Your remote working hours and which days you work remotely will be discussed and agreed with your manager.' },
       { title: 'Meal break', value: '12:30–13:00', description: 'This time is reserved for lunch and a proper break from work.' },
       { title: 'Shared expectations', value: 'Communicate early', description: 'Keep your calendar current, signal changes, and make your availability visible to the team.' },
     ],
@@ -160,7 +159,7 @@ export const onboardingContent = {
     eyebrow: 'Staying connected',
     title: 'Communication tools',
     description:
-      'Good communication is less about being constantly online and more about communicating openly with your team while respecting people’s focus.',
+      'Good communication is less about being constantly online and more about communicating openly with your team while respecting people’s focus. On your first day, your technical support contact will give you access to the tools below. You will meet them in the next step.',
     tools: [
       {
         name: 'Slack',
